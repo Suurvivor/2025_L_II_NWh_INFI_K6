@@ -5,7 +5,7 @@ lint:
 	flake8 hello_world test
 .PHONY: test
 test:
-	pythonpath=. py.test
+	pythonpath=. py.test --verbose -s
 run:
 	python main.py
 docker_build:
