@@ -13,21 +13,14 @@ jobs:
 
         
 
-    steps: 
-
-      - checkout 
-
+    steps:
+      - checkout
       - run: make deps 
       - run: make lint
       - run: make test
-
-workflows: 
-
-  basic:  
-
-    jobs: 
-
+      - run: make docker_build
+      - run: make docker_push
+workflows:
+  basic:
+    jobs:
       - build-and-test
-
-run: make docker_build
-run: make docker_push
